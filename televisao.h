@@ -11,8 +11,10 @@ class Televisao{
 	    void setCanal(int);
 	    int getVolume();
 	    int getCanal();
+		void modificaVolume();
+		void modificaCanal();
+		 
 	    
-
 };
 
 #endif // TELEVISAO_H_INCLUDED

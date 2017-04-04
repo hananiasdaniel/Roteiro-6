@@ -1,9 +1,11 @@
 #include <iostream>
 #include "televisao.h"
 
+using namespace std;
+
 Televisao::Televisao(int c, int v){
-	c = 0;
-	v = 0;
+	setCanal(c);
+	setVolume(v);
 }
 
 void Televisao::setVolume(int v){
@@ -32,4 +34,39 @@ int Televisao::getVolume(){
 
 int Televisao::getCanal(){
 	return canal;
+}
+
+void Televisao::modificaVolume(){
+    int o;
+	cin >> o;
+	if(o == 1){
+		volume++;
+	}else if(o == 0){
+		volume--;
+	}else{
+		cout << "valor invalido, digite novamente" << endl;
+		modificaVolume();
+	}
+	cout << "volume atual eh: " << volume << endl;
+}
+
+void Televisao::modificaCanal(){
+	int o;
+	int ca;
+	cin >> o;
+	if(o == 1){
+		canal++;
+	}else if(o == 2){
+		canal--;
+		}else if(o == 3){
+			cout << "Qual canal desejado? " << endl;
+			cin >> ca;
+			setCanal(ca);
+	}
+	else{
+		cout << "Invalido. Digite novamente" << endl;
+		modificaCanal();		
+	} 
+	cout << canal << endl;
+
 }
